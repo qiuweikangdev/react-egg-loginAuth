@@ -38,7 +38,8 @@ const Login =(props)=>{
                 props.history.push('/');
              },
 
-             //密码或用户名不存在会出现错误,后台设置了状态码响应
+             //密码或用户名不存在会出现错误,后台设置了状态码响应 返回404
+            //  登录失败/授权失败/用户名或密码不正确 =>返回401 
              (err)=>{
                  console.log(err.response)
                  setError({msg:err.response.data.message})
